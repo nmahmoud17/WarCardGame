@@ -14,6 +14,11 @@ public class Card {
         this.rank = rank;
     }
 
+    public void printCardDetails() {
+        System.out.println(getRank());
+        System.out.println(getSuit());
+    }
+
 
     public String getSuit() {
         return suit;

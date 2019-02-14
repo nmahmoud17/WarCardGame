@@ -5,14 +5,20 @@ import java.util.Arrays;
 
 public class DeckGenerator {
 
-    private ArrayList<String> suits = new ArrayList<>(Arrays.asList("Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"));
-    private ArrayList<String> ranks = new ArrayList<>(Arrays.asList("Club", "Spade","Hearts","Diamonds"));
+    private ArrayList<String> ranks = new ArrayList<>(Arrays.asList("Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"));
+    private ArrayList<String> suits = new ArrayList<>(Arrays.asList("Club", "Spade","Hearts","Diamonds"));
     private Card newCard;
+    ArrayList <Card> deck = new ArrayList<>();
+
+
+
+
 
     public Card makeCard() {
-        for (String suit: suits) {
-            for (String rank: ranks) {
+        for (String rank: ranks) {
+            for (String suit: suits) {
                newCard = new Card(suit, rank);
+               deck.add(newCard);
             }
 
         }
@@ -20,10 +26,16 @@ public class DeckGenerator {
         return newCard;
     }
 
-    public CardDeck generateCardDeck() {
 
-
+    public void showAllCards(){
+        for (Card cards: deck) {
+            cards.printCardDetails();
+        }
     }
+//    public CardDeck generateCardDeck() {
+//
+//
+//    }
 
 
     public ArrayList<String> getSuits() {
