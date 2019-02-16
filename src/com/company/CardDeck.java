@@ -54,5 +54,15 @@ public class CardDeck {
         return hand2;
     }
 
+    public void addCardToPlayerOneHand(Card card){
+        playerOneHand.add(card);
+
+    }
+
+    public void addCardtoPlayerTwoHand(Card card){
+        playerTwoHand.add(card);
+    }
+
+
 
 }
