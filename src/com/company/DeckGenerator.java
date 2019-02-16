@@ -23,8 +23,6 @@ public class DeckGenerator {
     }
 
 
-
-
     public ArrayList<String> getSuits() {
         return suits;
     }

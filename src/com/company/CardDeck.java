@@ -7,12 +7,7 @@ import java.util.List;
 public class CardDeck {
 
     private ArrayList<Card> cards;
-    private List<Card> playerOneHand;
-    private List<Card> playerTwoHand;
 
-    public ArrayList<Card> getCardDeck() {
-        return cards;
-    }
 
     public void setCardDeck(ArrayList<Card> cardDeck) {
         this.cards = cardDeck;
@@ -28,41 +23,11 @@ public class CardDeck {
         }
     }
 
-    public void splitCardDeck() {
-        playerOneHand = cards.subList(0, 27);
-        System.out.println("---------");
-        System.out.println("Player1 hand");
-        for (Card cards : playerOneHand) {
-            cards.printCardDetails();
-        }
-
-        playerTwoHand = cards.subList(27, 52);
-        System.out.println("---------");
-        System.out.println("Player2 hand");
-        for (Card cards : playerTwoHand) {
-            cards.printCardDetails();
-        }
+    public ArrayList<Card> getCards() {
+        return cards;
     }
 
-    public Card getPlayer1FirstCard() {
-        Card hand1 = playerOneHand.get(0);
-        return hand1;
+    public void setCards(ArrayList<Card> cards) {
+        this.cards = cards;
     }
-
-    public Card getPlayer2FirstCard() {
-        Card hand2 = playerTwoHand.get(0);
-        return hand2;
-    }
-
-    public void addCardToPlayerOneHand(Card card){
-        playerOneHand.add(card);
-
-    }
-
-    public void addCardtoPlayerTwoHand(Card card){
-        playerTwoHand.add(card);
-    }
-
-
-
 }
