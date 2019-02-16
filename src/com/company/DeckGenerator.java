@@ -11,7 +11,7 @@ public class DeckGenerator {
     private Card newCard;
 
 
-    public ArrayList<Card> makeCards() {
+    public ArrayList<Card> makeDeck() {
         ArrayList<Card> deck = new ArrayList<>();
         for (String rank: ranks) {
             for (String suit: suits) {
@@ -21,6 +21,7 @@ public class DeckGenerator {
         }
         return deck;
     }
+
 
 
 

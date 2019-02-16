@@ -10,7 +10,7 @@ public class Main {
         DeckGenerator generator = new DeckGenerator();
 
         //make a new list of cards from the generator
-        ArrayList<Card> cards = generator.makeCards();
+        ArrayList<Card> cards = generator.makeDeck();
 
         //Call cardDeck Object, and set it with the list of cards we made above
         CardDeck cardDeck = new CardDeck();
