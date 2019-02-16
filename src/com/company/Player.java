@@ -16,7 +16,7 @@ public class Player {
             cards.printCardDetails();
         }
 
-        playerTwoHand = deck.getCards().subList(27,53);
+        playerTwoHand = deck.getCards().subList(27,52);
         System.out.println("---------");
         System.out.println("Player2 hand");
         for (Card cards : playerTwoHand) {

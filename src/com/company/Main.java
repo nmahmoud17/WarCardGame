@@ -14,14 +14,25 @@ public class Main {
 
         //Call cardDeck Object, and set it with the list of cards we made above
         CardDeck cardDeck = new CardDeck();
-        cardDeck.setCardDeck(cards);
 
-        cardDeck.showCardDeck(cards);
+        cardDeck.setCards(cards);
         cardDeck.shuffleDeck(cards);
-        System.out.println("---------");
-        cardDeck.showCardDeck(cards);
 
-        System.out.println("---------------");
+        Player player = new Player();
+        player.splitCardDeck(cardDeck);
+        System.out.println("------- 1st card");
+        player.getPlayer1FirstCard().printCardDetails();
+
+
+
+
+
+//        cardDeck.showCardDeck(cards);
+//        System.out.println("---------");
+//        cardDeck.showCardDeck(cards);
+//
+//        System.out.println("---------------");
+//
 
 
 

@@ -9,9 +9,9 @@ public class CardDeck {
     private ArrayList<Card> cards;
 
 
-    public void setCardDeck(ArrayList<Card> cardDeck) {
-        this.cards = cardDeck;
-    }
+//    public void setCardDeck(ArrayList<Card> cardDeck) {
+//        this.cards = cardDeck;
+//    }
 
     public void shuffleDeck(ArrayList<Card> deck) {
         Collections.shuffle(deck);
