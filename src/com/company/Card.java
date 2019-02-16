@@ -7,11 +7,13 @@ public class Card {
 
     private String suit;
     private String rank;
+    private int weightOfCard;
 
 
     public Card(String suit, String rank) {
         this.suit = suit;
         this.rank = rank;
+//        this.weightOfCard = getWeightOfCard();
     }
 
     public void printCardDetails() {
@@ -34,6 +36,14 @@ public class Card {
 
     public void setRank(String rank) {
         this.rank = rank;
+    }
+
+    public int getWeightOfCard() {
+        return weightOfCard;
+    }
+
+    public void setWeightOfCard(int weightOfCard) {
+        this.weightOfCard = weightOfCard;
     }
 }
 

@@ -2,40 +2,26 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class DeckGenerator {
 
     private ArrayList<String> ranks = new ArrayList<>(Arrays.asList("Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"));
     private ArrayList<String> suits = new ArrayList<>(Arrays.asList("Club", "Spade","Hearts","Diamonds"));
     private Card newCard;
-    ArrayList <Card> deck = new ArrayList<>();
 
 
-
-
-
-    public Card makeCard() {
+    public ArrayList<Card> makeCards() {
+        ArrayList<Card> deck = new ArrayList<>();
         for (String rank: ranks) {
             for (String suit: suits) {
                newCard = new Card(suit, rank);
                deck.add(newCard);
             }
-
         }
-
-        return newCard;
+        return deck;
     }
 
-
-    public void showAllCards(){
-        for (Card cards: deck) {
-            cards.printCardDetails();
-        }
-    }
-//    public CardDeck generateCardDeck() {
-//
-//
-//    }
 
 
     public ArrayList<String> getSuits() {
