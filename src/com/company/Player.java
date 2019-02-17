@@ -1,15 +1,18 @@
 package com.company;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
 
     private List<Card> playerOneHand;
     private List<Card> playerTwoHand;
+    private List<Card> centralDeck;
 
 
     public void splitCardDeck(CardDeck deck) {
-        playerOneHand = deck.getCards().subList(0,27);
+        playerOneHand = deck.getCards().subList(0,26);
         System.out.println("---------");
         System.out.println("Player1 hand");
         for (Card cards : playerOneHand) {
@@ -25,22 +28,36 @@ public class Player {
     }
 
     public Card getPlayer1FirstCard() {
-        Card hand1 = playerOneHand.get(0);
-        return hand1;
+        Card firstCardPlayer1 = playerOneHand.get(0);
+
+        return firstCardPlayer1;
     }
 
     public Card getPlayer2FirstCard() {
-        Card hand2 = playerTwoHand.get(0);
-        return hand2;
+        Card firstCardPlayer2 = playerTwoHand.get(0);
+        return firstCardPlayer2;
     }
 
-    public void addCardToPlayerOneHand(Card card){
-        playerOneHand.add(card);
+
+    public void removePlayedCard() {
+        playerOneHand.remove(getPlayer1FirstCard());
+        playerTwoHand.remove(getPlayer2FirstCard());
+    }
+
+    public List<Card> addToCentralDeck() {
+        centralDeck.add(getPlayer1FirstCard());
+        centralDeck.add(getPlayer2FirstCard());
+
+        return centralDeck;
+    }
+
+    public void addCentralDeckToPlayerOneHand(ArrayList<Card> centralDeck){
+        playerOneHand.addAll(centralDeck);
 
     }
 
-    public void addCardtoPlayerTwoHand(Card card){
-        playerTwoHand.add(card);
+    public void addCardtoPlayerTwoHand(ArrayList<Card> centralDeck){
+        playerTwoHand.addAll(centralDeck);
     }
 
 

@@ -1,8 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Card {
 
     private String suit;
@@ -13,10 +10,10 @@ public class Card {
     public Card(String suit, String rank) {
         this.suit = suit;
         this.rank = rank;
-        this.weight = assignWeightOfCard(rank);
+        this.weight = weightOfCard(rank);
     }
 
-    public int assignWeightOfCard(String rank) {
+    public int weightOfCard(String rank) {
         int card = 0;
 
         if (rank.equalsIgnoreCase("ace")) {

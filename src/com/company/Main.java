@@ -20,8 +20,11 @@ public class Main {
 
         Player player = new Player();
         player.splitCardDeck(cardDeck);
-        System.out.println("------- 1st card");
+        System.out.println("------- 1st card for P1");
         player.getPlayer1FirstCard().printCardDetails();
+
+        System.out.println("------- 1st card for P2");
+        player.getPlayer2FirstCard().printCardDetails();
 
 
 
