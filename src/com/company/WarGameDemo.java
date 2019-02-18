@@ -34,9 +34,10 @@ public class WarGameDemo {
                 cardDeck.shuffleDeck(cards);
                 player.splitCardDeck(cardDeck);
 
-                player.getComputersFirstCard();
-                player.getPlayerTwoFirstCard();
+                Card card1 = player.getComputersFirstCard();
+                Card card2 = player.getPlayerTwoFirstCard();
 
+                player.compareCards(card1, card2);
 
 
                 break;

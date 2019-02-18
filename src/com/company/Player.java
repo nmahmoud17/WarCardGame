@@ -7,7 +7,7 @@ public class Player {
 
     private List<Card> playerOneHand;
     private List<Card> playerTwoHand;
-    private List<Card> centralDeck;
+    private List<Card> centralDeck = new ArrayList<>();
 
 
     public void splitCardDeck(CardDeck deck) {
@@ -28,30 +28,30 @@ public class Player {
 
     public Card getComputersFirstCard() {
         Card firstCardPlayer1 = playerOneHand.get(0);
-        System.out.println("Computer's card is: ");
-            firstCardPlayer1.printCardDetails();
+//        System.out.println("Computer's card is: ");
+//            firstCardPlayer1.printCardDetails();
 
         return firstCardPlayer1;
     }
 
     public Card getPlayerTwoFirstCard() {
         Card firstCardPlayer2 = playerTwoHand.get(0);
-        System.out.println("Your card is: ");
-                firstCardPlayer2.printCardDetails();
+//        System.out.println("Your card is: ");
+//                firstCardPlayer2.printCardDetails();
         return firstCardPlayer2;
     }
 
 
-    public void removePlayedCard() {
-        playerOneHand.remove(getComputersFirstCard());
-        playerTwoHand.remove(getPlayerTwoFirstCard());
+    public void removePlayedCard(Card card1, Card card2) {
+        playerOneHand.remove(card1);
+        playerTwoHand.remove(card2);
+
     }
 
-    public List<Card> addToCentralDeck() {
-        centralDeck.add(getComputersFirstCard());
-        centralDeck.add(getPlayerTwoFirstCard());
+    public void addToCentralDeck(Card card1, Card card2) {
+        centralDeck.add(card1);
+        centralDeck.add(card2);
 
-        return centralDeck;
     }
 
     public List<Card> addCentralDeckToComputerHand(){
@@ -66,11 +66,11 @@ public class Player {
         playerTwoHand.addAll(centralDeck);
     }
 
-    public void compareCards(){
+    public void compareCards(Card card1, Card card2){
         if (getComputersFirstCard().getWeight() > getPlayerTwoFirstCard().getWeight()) {
-//            removePlayedCard();
-            addToCentralDeck();
+            addToCentralDeck(card1,card2);
             addCentralDeckToComputerHand();
+            printComputerHand();
         }
 
     }
