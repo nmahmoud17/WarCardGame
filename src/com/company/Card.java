@@ -60,8 +60,7 @@ public class Card {
     }
 
     public void printCardDetails() {
-        System.out.println(getRank());
-        System.out.println(getSuit());
+        System.out.println(getRank() + " of " + getSuit() + "\n");
     }
 
 
@@ -81,5 +80,12 @@ public class Card {
         this.rank = rank;
     }
 
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
 }
 
